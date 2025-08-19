@@ -45,7 +45,7 @@ public class Tank {
 
     public String toString(){
         if (this.alive){
-            return this.name + " ," + this.armor + " armor, " + this.ammo + " shells" ;
+            return this.name + ", " + this.armor + " armor, " + this.ammo + " shells" ;
         }
         else{
             return this.name + " DEADE";

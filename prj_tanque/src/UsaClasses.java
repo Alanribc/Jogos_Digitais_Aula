@@ -22,18 +22,18 @@ public class UsaClasses {
 
         Random random = new Random();
 
-        int primeiroTanque = random.nextInt(tanques.length);
-        int segundoTanque = random.nextInt(tanques.length);
+        int primeiroTanque = random.nextInt(tanques.size());
+        int segundoTanque = random.nextInt(tanques.size());
 
-        System.out.println("Primeiro tanque: " + tanques[primeiroTanque]);
+        System.out.println("Primeiro tanque: " + tanques.get(primeiroTanque));
         if(primeiroTanque == segundoTanque){
-            segundoTanque = random.nextInt(tanques.length);
+            segundoTanque = random.nextInt(tanques.size());
         }
-        System.out.println("Segundo tanque: " + tanques[segundoTanque]);
+        System.out.println("Segundo tanque: " + tanques.get(segundoTanque));
 
-        tanques[primeiroTanque].fire_at(tanques[segundoTanque]);
-        if(tanques[segundoTanque].explode()){
-
+        tanques.get(primeiroTanque).fire_at(tanques.get(segundoTanque));
+        if(tanques.get(segundoTanque).getArmor() <= 0){
+            tanques.get(segundoTanque).explode();
         } 
 
 
